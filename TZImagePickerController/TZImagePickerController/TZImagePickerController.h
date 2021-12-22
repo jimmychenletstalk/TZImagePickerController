@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 15/12/24.
 //  Copyright © 2015年 谭真. All rights reserved.
-//  version 3.6.8 - 2021.12.14
+//  version 3.6.6 - 2021.09.21
 //  更多信息，请前往项目的github地址：https://github.com/banchichen/TZImagePickerController
 
 /*
@@ -272,6 +272,13 @@
 
 @property (nonatomic, weak) id<TZImagePickerControllerDelegate> pickerDelegate;
 
+//For OLSC 圖片編輯功能
+@property (assign, nonatomic) BOOL useDrawImageMode;
+@property (assign, nonatomic) BOOL canAddCaption;
+@property (nonatomic, assign) BOOL showPostButton;
+@property (nonatomic, assign) NSString *maxImagesAlertString;
+@property (nonatomic, copy) void (^didFinishPickingPhotoWithMsgHandle)(UIImage *image, NSString *msg);
+@property (nonatomic, copy) void (^didFinishPickingPhotosWithInfosHandleUsePostButton)(NSArray<UIImage *> *photos,NSArray *assets,BOOL isSelectOriginalPhoto,NSArray<NSDictionary *> *infos, BOOL usePostButton);
 @end
 
 
@@ -337,10 +344,16 @@
 - (BOOL)isAssetCanBeSelected:(PHAsset *)asset;
 @end
 
+@protocol TZAlbumPickerControllerDelegate <NSObject>
 
+- (void)albumDidSelectAlbum:(TZAlbumModel *)model andColum:(NSInteger)colum;
+
+@end
 @interface TZAlbumPickerController : UIViewController
+@property (nonatomic, weak)id<TZAlbumPickerControllerDelegate>delegate;
 @property (nonatomic, assign) NSInteger columnNumber;
 @property (assign, nonatomic) BOOL isFirstAppear;
+@property (nonatomic, strong)id tempImagePickerVc;
 - (void)configTableView;
 @end
 
@@ -360,7 +373,6 @@
 + (BOOL)tz_isRightToLeftLayout;
 + (void)configBarButtonItem:(UIBarButtonItem *)item tzImagePickerVc:(TZImagePickerController *)tzImagePickerVc;
 + (BOOL)isICloudSyncError:(NSError *)error;
-+ (BOOL)isAssetNotSelectable:(TZAssetModel *)model tzImagePickerVc:(TZImagePickerController *)tzImagePickerVc;
 @end
 
 

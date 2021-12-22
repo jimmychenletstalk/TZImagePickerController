@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38D3DC8A2771D5C9001C1CB3 /* LTAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC872771D5C9001C1CB3 /* LTAlbumTableViewCell.m */; };
+		38D3DC8B2771D5C9001C1CB3 /* LTAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D3DC882771D5C9001C1CB3 /* LTAlbumTableViewCell.xib */; };
+		38D3DC8E2771D6ED001C1CB3 /* UIColor+TZColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC8D2771D6ED001C1CB3 /* UIColor+TZColor.m */; };
+		38D3DC912772DEF6001C1CB3 /* UIImage+TZMaskColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC902772DEF6001C1CB3 /* UIImage+TZMaskColor.m */; };
+		38D3DC962772E892001C1CB3 /* LTGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC922772E891001C1CB3 /* LTGradientButton.m */; };
+		38D3DC972772E892001C1CB3 /* LTGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC942772E891001C1CB3 /* LTGradientView.m */; };
+		38D3DC982772EBF3001C1CB3 /* LTGradientButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D3DC932772E891001C1CB3 /* LTGradientButton.h */; };
+		38D3DC992772EBF5001C1CB3 /* LTGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC922772E891001C1CB3 /* LTGradientButton.m */; };
+		38D3DC9A2772EBF8001C1CB3 /* LTGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D3DC952772E891001C1CB3 /* LTGradientView.h */; };
+		38D3DC9B2772EBFB001C1CB3 /* LTGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC942772E891001C1CB3 /* LTGradientView.m */; };
+		38D3DC9C2772EBFE001C1CB3 /* LTAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D3DC872771D5C9001C1CB3 /* LTAlbumTableViewCell.m */; };
+		38D3DC9D2772EC04001C1CB3 /* LTAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D3DC882771D5C9001C1CB3 /* LTAlbumTableViewCell.xib */; };
+		38D3DC9E2772EC07001C1CB3 /* LTAlbumTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D3DC892771D5C9001C1CB3 /* LTAlbumTableViewCell.h */; };
 		6D32B9BD1CD83640005CE1E0 /* LxGridViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D32B9BC1CD83640005CE1E0 /* LxGridViewFlowLayout.m */; };
 		6D4608311DFFC60D004FB009 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4608301DFFC60D004FB009 /* TZGifPhotoPreviewController.m */; };
 		6D5358CD1D64600F00928CC6 /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5358CC1D64600F00928CC6 /* NSBundle+TZImagePicker.m */; };
@@ -117,6 +130,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38D3DC872771D5C9001C1CB3 /* LTAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAlbumTableViewCell.m; sourceTree = "<group>"; };
+		38D3DC882771D5C9001C1CB3 /* LTAlbumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTAlbumTableViewCell.xib; sourceTree = "<group>"; };
+		38D3DC892771D5C9001C1CB3 /* LTAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAlbumTableViewCell.h; sourceTree = "<group>"; };
+		38D3DC8C2771D6ED001C1CB3 /* UIColor+TZColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+TZColor.h"; sourceTree = "<group>"; };
+		38D3DC8D2771D6ED001C1CB3 /* UIColor+TZColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TZColor.m"; sourceTree = "<group>"; };
+		38D3DC8F2772DEF6001C1CB3 /* UIImage+TZMaskColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TZMaskColor.h"; sourceTree = "<group>"; };
+		38D3DC902772DEF6001C1CB3 /* UIImage+TZMaskColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TZMaskColor.m"; sourceTree = "<group>"; };
+		38D3DC922772E891001C1CB3 /* LTGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGradientButton.m; sourceTree = "<group>"; };
+		38D3DC932772E891001C1CB3 /* LTGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGradientButton.h; sourceTree = "<group>"; };
+		38D3DC942772E891001C1CB3 /* LTGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGradientView.m; sourceTree = "<group>"; };
+		38D3DC952772E891001C1CB3 /* LTGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGradientView.h; sourceTree = "<group>"; };
 		6D12FC191D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6D12FC1A1D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6D32B9BB1CD83640005CE1E0 /* LxGridViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxGridViewFlowLayout.h; sourceTree = "<group>"; };
@@ -225,6 +249,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38D3DC862771D5C9001C1CB3 /* LTCustom */ = {
+			isa = PBXGroup;
+			children = (
+				38D3DC932772E891001C1CB3 /* LTGradientButton.h */,
+				38D3DC922772E891001C1CB3 /* LTGradientButton.m */,
+				38D3DC952772E891001C1CB3 /* LTGradientView.h */,
+				38D3DC942772E891001C1CB3 /* LTGradientView.m */,
+				38D3DC872771D5C9001C1CB3 /* LTAlbumTableViewCell.m */,
+				38D3DC882771D5C9001C1CB3 /* LTAlbumTableViewCell.xib */,
+				38D3DC892771D5C9001C1CB3 /* LTAlbumTableViewCell.h */,
+			);
+			path = LTCustom;
+			sourceTree = "<group>";
+		};
 		6DC358641CC8BAE300898D29 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +350,7 @@
 		900EEFF51C2BBF7600EA709B /* TZImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				38D3DC862771D5C9001C1CB3 /* LTCustom */,
 				900EEFF61C2BBF9500EA709B /* TZImagePickerController.h */,
 				900EEFF71C2BBF9500EA709B /* TZImagePickerController.m */,
 				900EEFFC1C2BD58B00EA709B /* TZPhotoPickerController.h */,
@@ -344,6 +383,10 @@
 				902938D71EE2D02C000F2F8F /* TZLocationManager.m */,
 				9005E2B2257A462E002A8682 /* UIView+TZLayout.h */,
 				9005E2B1257A462E002A8682 /* UIView+TZLayout.m */,
+				38D3DC8C2771D6ED001C1CB3 /* UIColor+TZColor.h */,
+				38D3DC8D2771D6ED001C1CB3 /* UIColor+TZColor.m */,
+				38D3DC8F2772DEF6001C1CB3 /* UIImage+TZMaskColor.h */,
+				38D3DC902772DEF6001C1CB3 /* UIImage+TZMaskColor.m */,
 				6D5358CB1D64600F00928CC6 /* NSBundle+TZImagePicker.h */,
 				6D5358CC1D64600F00928CC6 /* NSBundle+TZImagePicker.m */,
 				6DC358641CC8BAE300898D29 /* Resources */,
@@ -396,7 +439,10 @@
 			files = (
 				901CC3FA21CB757500C55443 /* TZImageRequestOperation.h in Headers */,
 				9F763A6B1FA0731E00D9E526 /* TZImagePickerController.h in Headers */,
+				38D3DC9E2772EC07001C1CB3 /* LTAlbumTableViewCell.h in Headers */,
+				38D3DC982772EBF3001C1CB3 /* LTGradientButton.h in Headers */,
 				9F763A6D1FA0733700D9E526 /* NSBundle+TZImagePicker.h in Headers */,
+				38D3DC9A2772EBF8001C1CB3 /* LTGradientView.h in Headers */,
 				9F763A6C1FA0733100D9E526 /* TZAssetModel.h in Headers */,
 				9F763A731FA0741D00D9E526 /* TZVideoPlayerController.h in Headers */,
 				9F763A741FA0741D00D9E526 /* TZGifPhotoPreviewController.h in Headers */,
@@ -551,6 +597,7 @@
 				900E658F1C2BB8D5003D9A9E /* LaunchScreen.storyboard in Resources */,
 				90020E1520F8840F00D3AB10 /* README.md in Resources */,
 				6DC358661CC8BAFD00898D29 /* TZImagePickerController.bundle in Resources */,
+				38D3DC8B2771D5C9001C1CB3 /* LTAlbumTableViewCell.xib in Resources */,
 				900E658C1C2BB8D5003D9A9E /* Assets.xcassets in Resources */,
 				900E658A1C2BB8D5003D9A9E /* Main.storyboard in Resources */,
 			);
@@ -575,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F763A6E1FA0734800D9E526 /* TZImagePickerController.bundle in Resources */,
+				38D3DC9D2772EC04001C1CB3 /* LTAlbumTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +638,7 @@
 				9038D5911C3974F0007DE549 /* TZTestCell.m in Sources */,
 				900EF00F1C2C0B1100EA709B /* TZAssetModel.m in Sources */,
 				900EEFFE1C2BD58B00EA709B /* TZPhotoPickerController.m in Sources */,
+				38D3DC962772E892001C1CB3 /* LTGradientButton.m in Sources */,
 				900EF0021C2BD7E400EA709B /* TZAssetCell.m in Sources */,
 				6DD0502B1DF659ED0057C78D /* TZProgressView.m in Sources */,
 				6D32B9BD1CD83640005CE1E0 /* LxGridViewFlowLayout.m in Sources */,
@@ -598,14 +647,18 @@
 				900E65871C2BB8D5003D9A9E /* ViewController.m in Sources */,
 				90CE84AE1C3A89EF003D0779 /* TZImageManager.m in Sources */,
 				901F2295215CABD600F604ED /* FLAnimatedImage.m in Sources */,
+				38D3DC972772E892001C1CB3 /* LTGradientView.m in Sources */,
 				900E65841C2BB8D5003D9A9E /* AppDelegate.m in Sources */,
 				9005E2B3257A462E002A8682 /* UIView+TZLayout.m in Sources */,
 				B606A9C4265FD53200F5493E /* TZVideoCropController.m in Sources */,
 				901F2296215CABD600F604ED /* FLAnimatedImageView.m in Sources */,
+				38D3DC912772DEF6001C1CB3 /* UIImage+TZMaskColor.m in Sources */,
 				9019FD8D21EC25D7009ADEAE /* TZImageUploadOperation.m in Sources */,
 				900E65811C2BB8D5003D9A9E /* main.m in Sources */,
 				900EF0121C2C107400EA709B /* TZPhotoPreviewController.m in Sources */,
+				38D3DC8E2771D6ED001C1CB3 /* UIColor+TZColor.m in Sources */,
 				901CC3FC21CB758500C55443 /* TZImageRequestOperation.m in Sources */,
+				38D3DC8A2771D5C9001C1CB3 /* LTAlbumTableViewCell.m in Sources */,
 				6D5358CD1D64600F00928CC6 /* NSBundle+TZImagePicker.m in Sources */,
 				900EEFF81C2BBF9500EA709B /* TZImagePickerController.m in Sources */,
 				902938D81EE2D02C000F2F8F /* TZLocationManager.m in Sources */,
@@ -636,7 +689,9 @@
 				B662C37326629179006A672A /* TZVideoEditedPreviewController.m in Sources */,
 				B6977B0A265FDB280028BA31 /* TZVideoCropController.m in Sources */,
 				901CC3FB21CB757500C55443 /* TZImageRequestOperation.m in Sources */,
+				38D3DC992772EBF5001C1CB3 /* LTGradientButton.m in Sources */,
 				9F763A501FA072E500D9E526 /* TZImagePickerController.m in Sources */,
+				38D3DC9C2772EBFE001C1CB3 /* LTAlbumTableViewCell.m in Sources */,
 				9F763A521FA072E500D9E526 /* TZPhotoPickerController.m in Sources */,
 				9F763A541FA072E500D9E526 /* TZAssetCell.m in Sources */,
 				9F763A561FA072E500D9E526 /* TZAssetModel.m in Sources */,
@@ -648,6 +703,7 @@
 				9F763A601FA072E500D9E526 /* TZProgressView.m in Sources */,
 				9F763A621FA072E500D9E526 /* TZImageManager.m in Sources */,
 				9F763A641FA072E500D9E526 /* TZImageCropManager.m in Sources */,
+				38D3DC9B2772EBFB001C1CB3 /* LTGradientView.m in Sources */,
 				9F763A661FA072E500D9E526 /* TZLocationManager.m in Sources */,
 				9F763A6A1FA072E500D9E526 /* NSBundle+TZImagePicker.m in Sources */,
 			);
@@ -821,7 +877,7 @@
 					"$(PROJECT_DIR)/TZImagePickerController",
 				);
 				INFOPLIST_FILE = TZImagePickerController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = tanzhenios2021.TZImagePickerController.www;
@@ -845,7 +901,7 @@
 					"$(PROJECT_DIR)/TZImagePickerController",
 				);
 				INFOPLIST_FILE = TZImagePickerController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = tanzhenios2021.TZImagePickerController.www;
@@ -932,7 +988,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TZImagePickerControllerFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 3.6.8;
 				OTHER_LDFLAGS = "-all_load";
@@ -973,7 +1029,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = TZImagePickerControllerFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 3.6.8;
 				OTHER_LDFLAGS = "-all_load";

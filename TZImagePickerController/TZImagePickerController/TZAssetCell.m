@@ -12,7 +12,6 @@
 #import "TZImageManager.h"
 #import "TZImagePickerController.h"
 #import "TZProgressView.h"
-
 @interface TZAssetCell ()
 @property (weak, nonatomic) UIImageView *imageView;       // The photo / 照片
 @property (weak, nonatomic) UIImageView *selectImageView;
@@ -59,7 +58,6 @@
     self.selectPhotoButton.selected = model.isSelected;
     self.selectImageView.image = self.selectPhotoButton.isSelected ? self.photoSelImage : self.photoDefImage;
     self.indexLabel.hidden = !self.selectPhotoButton.isSelected;
-    
     self.type = (NSInteger)model.type;
     // 让宽度/高度小于 最小可选照片尺寸 的图片不能选中
     if (![[TZImageManager manager] isPhotoSelectableWithAsset:model.asset]) {
@@ -113,14 +111,11 @@
         self.bottomView.hidden = NO;
         self.timeLength.text = _model.timeLength;
         self.videoImgView.hidden = NO;
-        _timeLength.tz_left = self.videoImgView.tz_right;
-        _timeLength.textAlignment = NSTextAlignmentRight;
     } else if (type == TZAssetCellTypePhotoGif && self.allowPickingGif) {
         self.bottomView.hidden = NO;
-        self.timeLength.text = @"GIF";
+//        self.gifImgView.hidden = NO;
+        self.timeLength.text = @"";
         self.videoImgView.hidden = YES;
-        _timeLength.tz_left = 5;
-        _timeLength.textAlignment = NSTextAlignmentLeft;
     }
 }
 
@@ -236,8 +231,7 @@
         self.index = [tzImagePickerVc.selectedAssetIds indexOfObject:self.model.asset.localIdentifier] + 1;
     }
     self.indexLabel.hidden = !self.selectPhotoButton.isSelected;
-    BOOL notSelectable = [TZCommonTools isAssetNotSelectable:self.model tzImagePickerVc:tzImagePickerVc];
-    if (notSelectable && tzImagePickerVc.showPhotoCannotSelectLayer && !self.model.isSelected) {
+    if (tzImagePickerVc.selectedModels.count >= tzImagePickerVc.maxImagesCount && tzImagePickerVc.showPhotoCannotSelectLayer && !self.model.isSelected) {
         self.cannotSelectLayerButton.backgroundColor = tzImagePickerVc.cannotSelectLayerColor;
         self.cannotSelectLayerButton.hidden = NO;
     } else {
@@ -308,7 +302,7 @@
     if (_videoImgView == nil) {
         UIImageView *videoImgView = [[UIImageView alloc] init];
         [videoImgView setImage:[UIImage tz_imageNamedFromMyBundle:@"VideoSendIcon"]];
-        [self.bottomView addSubview:videoImgView];
+//        [self.bottomView addSubview:videoImgView];
         _videoImgView = videoImgView;
     }
     return _videoImgView;
@@ -317,7 +311,7 @@
 - (UILabel *)timeLength {
     if (_timeLength == nil) {
         UILabel *timeLength = [[UILabel alloc] init];
-        timeLength.font = [UIFont boldSystemFontOfSize:11];
+        timeLength.font = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
         timeLength.textColor = [UIColor whiteColor];
         timeLength.textAlignment = NSTextAlignmentRight;
         [self.bottomView addSubview:timeLength];
@@ -369,10 +363,9 @@
     CGFloat progressXY = (self.tz_width - progressWH) / 2;
     _progressView.frame = CGRectMake(progressXY, progressXY, progressWH, progressWH);
 
-    _bottomView.frame = CGRectMake(0, self.tz_height - 17, self.tz_width, 17);
-    _videoImgView.frame = CGRectMake(8, 0, 17, 17);
-    _timeLength.frame = CGRectMake(self.videoImgView.tz_right, 0, self.tz_width - self.videoImgView.tz_right - 5, 17);
-    
+    _bottomView.frame = CGRectMake(0, self.tz_height - 24, self.tz_width, 24);
+    _timeLength.tz_centerY = _bottomView.tz_centerY;
+    _timeLength.tz_right = -4;
     self.type = (NSInteger)self.model.type;
     self.showSelectBtn = self.showSelectBtn;
     
@@ -402,20 +395,22 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    self.backgroundColor = [UIColor whiteColor];
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    self.contentView.backgroundColor = [StyleUtil colorWithHex:D_Setting_CELL_BG_COLOR];
+//    self.backgroundColor = [StyleUtil colorWithHex:D_Setting_CELL_BG_COLOR];
+//    self.titleLabel.textColor = D_LETSTALK_COLOR_MAIN;
+//    UIView *bgColorView = [[UIView alloc] init];
+//    bgColorView.backgroundColor = D_CELL_SELECTED_COLOR;
+//    [self setSelectedBackgroundView:bgColorView];
     return self;
 }
 
 - (void)setModel:(TZAlbumModel *)model {
     _model = model;
     
-    UIColor *nameColor = UIColor.blackColor;
-    if (@available(iOS 13.0, *)) {
-        nameColor = UIColor.labelColor;
-    }
+    UIColor *nameColor = UIColor.whiteColor;
     NSMutableAttributedString *nameString = [[NSMutableAttributedString alloc] initWithString:model.name attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:nameColor}];
-    NSAttributedString *countString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  (%zd)",model.count] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
+    NSAttributedString *countString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  (%zd)",model.count] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:UIColor.lightGrayColor}];
     [nameString appendAttributedString:countString];
     self.titleLabel.attributedText = nameString;
     [[TZImageManager manager] getPostImageWithAlbumModel:model completion:^(UIImage *postImage) {

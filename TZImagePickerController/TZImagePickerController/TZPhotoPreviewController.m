@@ -216,7 +216,7 @@
     [_collectionView registerClass:[TZGifPreviewCell class] forCellWithReuseIdentifier:@"TZGifPreviewCell"];
     
     TZImagePickerController *_tzImagePickerVc = (TZImagePickerController *)self.navigationController;
-    if (_tzImagePickerVc.scaleAspectFillCrop && _tzImagePickerVc.allowCrop) {
+    if (_tzImagePickerVc.scaleAspectFillCrop || _tzImagePickerVc.allowCrop) {
         _collectionView.scrollEnabled = NO;
     }
 }
@@ -320,7 +320,12 @@
     if (!selectButton.isSelected) {
         // 1. select:check if over the maxImagesCount / 选择照片,检查是否超过了最大个数的限制
         if (_tzImagePickerVc.selectedModels.count >= _tzImagePickerVc.maxImagesCount) {
-            NSString *title = [NSString stringWithFormat:[NSBundle tz_localizedStringForKey:@"Select a maximum of %zd photos"], _tzImagePickerVc.maxImagesCount];
+            NSString *title;
+            if (_tzImagePickerVc.maxImagesAlertString) {
+                title = _tzImagePickerVc.maxImagesAlertString;
+            }else{
+                title = [NSString stringWithFormat:[NSBundle tz_localizedStringForKey:@"Select a maximum of %zd photos"], _tzImagePickerVc.maxImagesCount];
+            }
             [_tzImagePickerVc showAlertWithTitle:title];
             return;
             // 2. if not over the maxImagesCount / 如果没有超过最大个数限制
