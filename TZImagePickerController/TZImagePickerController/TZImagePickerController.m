@@ -312,8 +312,8 @@
 
 - (void)configDefaultImageName {
     self.takePictureImageName = @"takePicture80";
-    self.photoSelImageName = @"button_control_number_on";
-    self.photoDefImageName = @"button_control_radio_off";
+    self.photoSelImageName = @"button_control_number_select";
+    self.photoDefImageName = @"button_control_number_unselect";
     self.photoNumberIconImage = [self createImageWithColor:nil size:CGSizeMake(24, 24) radius:12]; // @"photo_number_icon";
     self.photoPreviewOriginDefImageName = @"preview_original_def";
     self.photoOriginDefImageName = @"photo_original_def";

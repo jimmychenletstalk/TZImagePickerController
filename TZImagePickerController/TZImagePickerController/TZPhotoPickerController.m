@@ -377,10 +377,10 @@ static CGFloat itemMargin = 5;
 
     _sendButton = [[LTGradientButton alloc]init];
     _sendButton.layer.masksToBounds = YES;
-    _sendButton.layer.cornerRadius = 6;
-    _sendButton.colorArray = @[[UIColor tzColor_colorWithHex:@"34B7FF"], [UIColor tzColor_colorWithHex:@"00D780"]];
+    _sendButton.layer.cornerRadius = 12;
+    _sendButton.colorArray = @[];
     _sendButton.heightRatio = 1;
-    _sendButton.backgroundColor = [UIColor tzColor_colorWithHex:@"00D790"];
+    _sendButton.backgroundColor = [UIColor tzColor_colorWithHex:@"004098"];
     _sendButton.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [_sendButton addTarget:self action:@selector(doneButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [_sendButton setTitle:[NSBundle tz_localizedStringForKey:@"Done"] forState:UIControlStateNormal];
