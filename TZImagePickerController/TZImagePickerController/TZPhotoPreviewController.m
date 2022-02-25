@@ -110,23 +110,23 @@
     [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_backButton addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    _selectButton = [[UIButton alloc] initWithFrame:CGRectZero];
-    [_selectButton setImage:tzImagePickerVc.photoDefImage forState:UIControlStateNormal];
-    [_selectButton setImage:tzImagePickerVc.photoSelImage forState:UIControlStateSelected];
-    _selectButton.imageView.clipsToBounds = YES;
-    _selectButton.imageEdgeInsets = UIEdgeInsetsMake(10, 0, 10, 0);
-    _selectButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
-    _selectButton.hidden = !tzImagePickerVc.showSelectBtn;
+//    _selectButton = [[UIButton alloc] initWithFrame:CGRectZero];
+//    [_selectButton setImage:tzImagePickerVc.photoDefImage forState:UIControlStateNormal];
+//    [_selectButton setImage:tzImagePickerVc.photoSelImage forState:UIControlStateSelected];
+//    _selectButton.imageView.clipsToBounds = YES;
+//    _selectButton.imageEdgeInsets = UIEdgeInsetsMake(10, 0, 10, 0);
+//    _selectButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+//    _selectButton.hidden = !tzImagePickerVc.showSelectBtn;
     
-    _indexLabel = [[UILabel alloc] init];
-    _indexLabel.adjustsFontSizeToFitWidth = YES;
-    _indexLabel.font = [UIFont systemFontOfSize:14];
-    _indexLabel.textColor = [UIColor whiteColor];
-    _indexLabel.textAlignment = NSTextAlignmentCenter;
+//    _indexLabel = [[UILabel alloc] init];
+//    _indexLabel.adjustsFontSizeToFitWidth = YES;
+//    _indexLabel.font = [UIFont systemFontOfSize:14];
+//    _indexLabel.textColor = [UIColor whiteColor];
+//    _indexLabel.textAlignment = NSTextAlignmentCenter;
     
-    [_naviBar addSubview:_selectButton];
-    [_naviBar addSubview:_indexLabel];
+//    [_naviBar addSubview:_selectButton];
+//    [_naviBar addSubview:_indexLabel];
     [_naviBar addSubview:_backButton];
     [self.view addSubview:_naviBar];
 }
@@ -184,6 +184,24 @@
     [_numberLabel addGestureRecognizer:tapGesture];
     
     [_originalPhotoButton addSubview:_originalPhotoLabel];
+    
+    _selectButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    [_selectButton setImage:_tzImagePickerVc.photoDefImage forState:UIControlStateNormal];
+    [_selectButton setImage:_tzImagePickerVc.photoSelImage forState:UIControlStateSelected];
+    _selectButton.imageView.clipsToBounds = YES;
+    _selectButton.imageEdgeInsets = UIEdgeInsetsMake(10, 0, 10, 0);
+    _selectButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+    _selectButton.hidden = !_tzImagePickerVc.showSelectBtn;
+    
+    _indexLabel = [[UILabel alloc] init];
+    _indexLabel.adjustsFontSizeToFitWidth = YES;
+    _indexLabel.font = [UIFont systemFontOfSize:14];
+    _indexLabel.textColor = [UIColor whiteColor];
+    _indexLabel.textAlignment = NSTextAlignmentCenter;
+    
+    [_toolBar addSubview:_selectButton];
+    [_toolBar addSubview:_indexLabel];
     [_toolBar addSubview:_doneButton];
     [_toolBar addSubview:_originalPhotoButton];
     [_toolBar addSubview:_numberImageView];
@@ -266,8 +284,6 @@
     CGFloat naviBarHeight = statusBarHeight + _tzImagePickerVc.navigationBar.tz_height;
     _naviBar.frame = CGRectMake(0, 0, self.view.tz_width, naviBarHeight);
     _backButton.frame = CGRectMake(10, 10 + statusBarHeightInterval, 44, 44);
-    _selectButton.frame = CGRectMake(self.view.tz_width - 56, 10 + statusBarHeightInterval, 44, 44);
-    _indexLabel.frame = _selectButton.frame;
     
     _layout.itemSize = CGSizeMake(self.view.tz_width + 20, self.view.tz_height);
     _layout.minimumInteritemSpacing = 0;
@@ -292,6 +308,8 @@
     }
     [_doneButton sizeToFit];
     _doneButton.frame = CGRectMake(self.view.tz_width - _doneButton.tz_width - 12, 0, MAX(44, _doneButton.tz_width), 44);
+    _selectButton.frame = CGRectMake(6, toolBarHeight/2 - 44/2, 44, 44);
+    _indexLabel.frame = _selectButton.frame;
     _numberImageView.frame = CGRectMake(_doneButton.tz_left - 24 - 5, 10, 24, 24);
     _numberLabel.frame = _numberImageView.frame;
     
@@ -582,8 +600,11 @@
         _indexLabel.hidden = YES;
     }
     _numberLabel.text = [NSString stringWithFormat:@"%zd",_tzImagePickerVc.selectedModels.count];
-    _numberImageView.hidden = (_tzImagePickerVc.selectedModels.count <= 0 || _isHideNaviBar || _isCropImage);
-    _numberLabel.hidden = (_tzImagePickerVc.selectedModels.count <= 0 || _isHideNaviBar || _isCropImage);
+    [_doneButton setTitle:[NSString stringWithFormat:@"%@ (%@)",_tzImagePickerVc.doneBtnTitleStr, _numberLabel.text] forState:UIControlStateNormal];
+    _numberImageView.hidden = true;
+    _numberLabel.hidden = true;
+//    _numberImageView.hidden = (_tzImagePickerVc.selectedModels.count <= 0 || _isHideNaviBar || _isCropImage);
+//    _numberLabel.hidden = (_tzImagePickerVc.selectedModels.count <= 0 || _isHideNaviBar || _isCropImage);
     
     _originalPhotoButton.selected = _isSelectOriginalPhoto;
     _originalPhotoLabel.hidden = !_originalPhotoButton.isSelected;

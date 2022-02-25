@@ -230,9 +230,10 @@
             imagePickerVc.maxImagesCount = self.maxCountTF.text.integerValue;
             imagePickerVc.allowPickingGif = self.allowPickingGifSwitch.isOn;
             imagePickerVc.autoSelectCurrentWhenDone = NO;
-            imagePickerVc.allowPickingOriginalPhoto = self.allowPickingOriginalPhotoSwitch.isOn;
-            imagePickerVc.allowPickingMultipleVideo = self.allowPickingMuitlpleVideoSwitch.isOn;
+            imagePickerVc.allowPickingOriginalPhoto = true;//self.allowPickingOriginalPhotoSwitch.isOn;
+            imagePickerVc.allowPickingMultipleVideo = true;//self.allowPickingMuitlpleVideoSwitch.isOn;
             imagePickerVc.showSelectedIndex = self.showSelectedIndexSwitch.isOn;
+            imagePickerVc.showSelectBtn = self.showSelectedIndexSwitch.isOn;
             imagePickerVc.isSelectOriginalPhoto = _isSelectOriginalPhoto;
             imagePickerVc.modalPresentationStyle = UIModalPresentationFullScreen;
             [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
@@ -339,7 +340,7 @@
     // 3. 设置是否可以选择视频/图片/原图
     imagePickerVc.allowPickingVideo = self.allowPickingVideoSwitch.isOn;
     imagePickerVc.allowPickingImage = self.allowPickingImageSwitch.isOn;
-    imagePickerVc.allowPickingOriginalPhoto = self.allowPickingOriginalPhotoSwitch.isOn;
+    imagePickerVc.allowPickingOriginalPhoto = false;
     imagePickerVc.allowPickingGif = self.allowPickingGifSwitch.isOn;
     imagePickerVc.allowPickingMultipleVideo = self.allowPickingMuitlpleVideoSwitch.isOn; // 是否可以多选视频
     
