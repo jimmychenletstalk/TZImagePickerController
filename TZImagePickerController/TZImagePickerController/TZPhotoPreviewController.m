@@ -308,7 +308,7 @@
     }
     [_doneButton sizeToFit];
     _doneButton.frame = CGRectMake(self.view.tz_width - _doneButton.tz_width - 12, 0, MAX(44, _doneButton.tz_width), 44);
-    _selectButton.frame = CGRectMake(6, toolBarHeight/2 - 44/2, 44, 44);
+    _selectButton.frame = CGRectMake(6, 0, 44, 44);
     _indexLabel.frame = _selectButton.frame;
     _numberImageView.frame = CGRectMake(_doneButton.tz_left - 24 - 5, 10, 24, 24);
     _numberLabel.frame = _numberImageView.frame;
