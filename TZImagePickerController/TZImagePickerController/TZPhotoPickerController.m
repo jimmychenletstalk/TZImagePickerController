@@ -380,13 +380,13 @@ static CGFloat itemMargin = 5;
     _sendButton.layer.cornerRadius = 12;
     _sendButton.colorArray = @[];
     _sendButton.heightRatio = 1;
-    _sendButton.backgroundColor = [UIColor tzColor_colorWithHex:@"004098"];
+    _sendButton.backgroundColor = tzImagePickerVc.sendButtonBGColorNormal;
     _sendButton.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [_sendButton addTarget:self action:@selector(doneButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [_sendButton setTitle:[NSBundle tz_localizedStringForKey:@"Done"] forState:UIControlStateNormal];
     [_sendButton setTitle:[NSBundle tz_localizedStringForKey:@"Done"] forState:UIControlStateDisabled];
-    [_sendButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    [_sendButton setTitleColor:UIColor.whiteColor forState:UIControlStateDisabled];
+    [_sendButton setTitleColor:tzImagePickerVc.oKButtonTitleColorNormal forState:UIControlStateNormal];
+    [_sendButton setTitleColor:tzImagePickerVc.oKButtonTitleColorDisabled forState:UIControlStateDisabled];
     _sendButton.enabled = tzImagePickerVc.selectedModels.count || tzImagePickerVc.alwaysEnableDoneBtn;
     
     _postButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -768,7 +768,7 @@ static CGFloat itemMargin = 5;
     if (model.type == TZAssetModelMediaTypeVideo && !tzImagePickerVc.allowPickingMultipleVideo) {
         if (tzImagePickerVc.selectedModels.count > 0) {
             TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
-            [imagePickerVc showAlertWithTitle:NSLocalizedString(@"You cannot select a video while selecting pictures.", @"")];
+            [imagePickerVc showAlertWithTitle:[NSBundle tz_localizedStringForKey:@"You cannot select a video while selecting pictures."]];
         } else {
             TZVideoPlayerController *videoPlayerVc = [[TZVideoPlayerController alloc] init];
             videoPlayerVc.model = model;
@@ -910,6 +910,11 @@ static CGFloat itemMargin = 5;
     _previewButton.enabled = tzImagePickerVc.selectedModels.count > 0;
     _doneButton.enabled = tzImagePickerVc.selectedModels.count > 0 || tzImagePickerVc.alwaysEnableDoneBtn;
     _sendButton.enabled = _doneButton.enabled;
+    if (_sendButton.enabled) {
+        _sendButton.backgroundColor = tzImagePickerVc.sendButtonBGColorNormal;
+    }else{
+        _sendButton.backgroundColor = tzImagePickerVc.sendButtonBGColorDisabled;
+    }
     _postButton.enabled = _doneButton.enabled;
 //    if (tzImagePickerVc.selectedModels.count > 0) {
 //        _doneButton.highlightedColor = [StyleUtil colorWithHex:D_SAVEBTN_HILIGHT_COLOR];
@@ -922,6 +927,7 @@ static CGFloat itemMargin = 5;
 //        _doneButton.normalColor = [StyleUtil colorWithHex:D_CANCELBTN_NORMAL_COLOR];
 //    }
     [_doneButton setTitle:[NSString stringWithFormat:@"%@ (%zd)",tzImagePickerVc.doneBtnTitleStr ,tzImagePickerVc.selectedModels.count] forState:UIControlStateNormal];
+    [_sendButton setTitle:[NSString stringWithFormat:@"%@ (%zd)",tzImagePickerVc.doneBtnTitleStr ,tzImagePickerVc.selectedModels.count] forState:UIControlStateNormal];
     
     _numberImageView.hidden = tzImagePickerVc.selectedModels.count <= 0;
 //    _numberLabel.hidden = tzImagePickerVc.selectedModels.count <= 0;

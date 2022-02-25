@@ -63,6 +63,9 @@
     self.oKButtonTitleColorNormal   = [UIColor colorWithRed:(83/255.0) green:(179/255.0) blue:(17/255.0) alpha:1.0];
     self.oKButtonTitleColorDisabled = [UIColor colorWithRed:(83/255.0) green:(179/255.0) blue:(17/255.0) alpha:0.5];
     
+    self.sendButtonBGColorNormal   =  [UIColor tzColor_colorWithHex:@"004098"];
+    self.sendButtonBGColorDisabled =  [UIColor tzColor_colorWithHex:@"004098"];
+    
     self.navigationBar.barTintColor = [UIColor tzColor_colorWithHex:@"03071a"];
     self.navigationBar.tintColor = [UIColor tzColor_colorWithHex:@"ffffff"];
     self.automaticallyAdjustsScrollViewInsets = NO;
